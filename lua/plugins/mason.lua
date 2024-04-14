@@ -31,13 +31,70 @@ return {
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
-    -- overrides `require("mason-nvim-dap").setup(...)`
-    opts = function(_, opts)
-      -- add more things to the ensure_installed table protecting against community packs modifying it
-      opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-        "python",
-        -- add more arguments for adding more debuggers
-      })
-    end,
+    opts = {
+      ensure_installed = { "python", "codelldb" },
+      handlers = {
+        python = function(source_name)
+          local dap = require "dap"
+
+          -- dap.adapters.codelldb = {
+          --   type = "executable",
+          --   command = "/Users/wd_seo/.local/share/nvim/mason/bin/codelldb",
+          --   name = "lldb",
+          --   host = "127.0.0.1",
+          --   port = 13000,
+          -- }
+          dap.adapters.cpp = {
+            type = "executable",
+            name = "codelldb", -- Updated name to match the adapter definition
+            command = globals.dap.cpp.adapter.command,
+          }
+
+          -- C++ Configuration
+          dap.configurations.cpp = {
+            {
+              name = "LCPP",
+              type = "codelldb", -- Updated to use the correct adapter name
+              request = "launch",
+              program = "${file}",
+              cwd = "${workspaceFolder}",
+              stopOnEntry = false,
+              args = {},
+              runInTerminal = true,
+            },
+          }
+
+          dap.adapters.python = {
+            type = "executable",
+            command = globals.dap.python.adapter.command,
+            args = {
+              "-m",
+              "debugpy.adapter",
+            },
+          }
+
+          dap.configurations.python = {
+            {
+              type = "python",
+              request = "launch",
+              name = "Launch file",
+              program = "${file}", -- This configuration will launch the current file if used.
+            },
+          }
+        end,
+      },
+    },
+    event = "BufRead",
   },
+  -- {
+  --   "jay-babu/mason-nvim-dap.nvim",
+  --   -- overrides `require("mason-nvim-dap").setup(...)`
+  --   opts = function(_, opts)
+  --     -- add more things to the ensure_installed table protecting against community packs modifying it
+  --     opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
+  --       "python",
+  --       -- add more arguments for adding more debuggers
+  --     })
+  --   end,
+  -- },
 }
