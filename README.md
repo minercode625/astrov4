@@ -15,6 +15,12 @@ mv ~/.local/state/nvim ~/.local/state/nvim.bak
 mv ~/.cache/nvim ~/.cache/nvim.bak
 ```
 
+My Custom Installation
+
+```shell
+brew install fd
+```
+
 #### Create a new user repository from this template
 
 Press the "Use this template" button above to create a new repository to store your user configuration.

@@ -16,9 +16,14 @@ return {
           ["w"] = { "<cmd>lua require('spider').motion('w')<CR>" },
           ["e"] = { "<cmd>lua require('spider').motion('e')<CR>" },
           ["b"] = { "<cmd>lua require('spider').motion('b')<CR>" },
+
+          ["<leader>vs"] = { "<cmd>VenvSelect<cr>", desc = "Select venv" },
+          ["<leader>vc"] = { "<cmd>VenvSelectCached<cr>", desc = "Select cached venv" },
+
           ["<leader>sa"] = { "<cmd>lua require('spectre').open()<CR>" },
           ["<leader>sw"] = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>" },
           ["<leader>s"] = { "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>" },
+
           ["<Leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
           ["<leader>T"] = { "<cmd>TroubleToggle<cr>", desc = "Trouble Toggle" },
           ["<Leader>bD"] = {

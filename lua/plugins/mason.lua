@@ -1,7 +1,5 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- Customize Mason plugins
-
+-- local pythonPath = function() return "/opt/homebrew/opt/python@3.12/bin/python3.12" end
 ---@type LazySpec
 return {
   -- use mason-lspconfig to configure LSP installations
@@ -37,36 +35,9 @@ return {
         python = function(source_name)
           local dap = require "dap"
 
-          -- dap.adapters.codelldb = {
-          --   type = "executable",
-          --   command = "/Users/wd_seo/.local/share/nvim/mason/bin/codelldb",
-          --   name = "lldb",
-          --   host = "127.0.0.1",
-          --   port = 13000,
-          -- }
-          dap.adapters.cpp = {
-            type = "executable",
-            name = "codelldb", -- Updated name to match the adapter definition
-            command = globals.dap.cpp.adapter.command,
-          }
-
-          -- C++ Configuration
-          dap.configurations.cpp = {
-            {
-              name = "LCPP",
-              type = "codelldb", -- Updated to use the correct adapter name
-              request = "launch",
-              program = "${file}",
-              cwd = "${workspaceFolder}",
-              stopOnEntry = false,
-              args = {},
-              runInTerminal = true,
-            },
-          }
-
           dap.adapters.python = {
             type = "executable",
-            command = globals.dap.python.adapter.command,
+            command = "python3",
             args = {
               "-m",
               "debugpy.adapter",
