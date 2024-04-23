@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("BufRead", {
-  pattern = { "*.h", "*.cpp", ".c" },
+  pattern = { "*.h", "*.cpp", "*.c", "*.m" },
   command = "set ts=4",
 })
 
