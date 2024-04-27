@@ -8,9 +8,9 @@ vim.api.nvim_create_autocmd("FileType", {
   command = "setlocal nospell",
 })
 
-vim.api.nvim_create_autocmd("BufRead", {
-  pattern = { "*.h", "*.cpp", "*.c", "*.m" },
-  command = "set tabstop=4",
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "matlab", "python", "c", "cpp" },
+  command = "setlocal tabstop=4 shiftwidth=4 expandtab",
 })
 
 return {}
