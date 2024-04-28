@@ -19,6 +19,7 @@
   "code_runner.nvim": { "branch": "main", "commit": "e40f651e98a0a12fcd44bf54a2ed258cfee5a914" },
   "copilot.lua": { "branch": "master", "commit": "f7612f5af4a7d7615babf43ab1e67a2d790c13a6" },
   "dressing.nvim": { "branch": "master", "commit": "42d767b04c50a6966c9633e3968bc65c0c2f2bfc" },
+  "everblush": { "branch": "main", "commit": "9a0e695fdd57b340d3ba2b72406e3ca519029f25" },
   "fine-cmdline.nvim": { "branch": "main", "commit": "dd676584145d62b30d7e8dbdd011796a8f0a065f" },
   "friendly-snippets": { "branch": "main", "commit": "ea068f1becd91bcd4591fceb6420d4335e2e14d3" },
   "garbage-day.nvim": { "branch": "main", "commit": "3af496f0d1dc6586dcf4ceda6bbf61a8f820ab66" },
