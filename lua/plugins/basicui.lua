@@ -1,10 +1,4 @@
 return {
-  -- {
-  --   "echasnovski/mini.animate",
-  --   config = function() require("mini.animate").setup() end,
-  --   version = "*",
-  --   event = "VeryLazy",
-  -- },
   {
     "easymotion/vim-easymotion",
     event = "VeryLazy",
@@ -16,10 +10,6 @@ return {
   },
   {
     "chrisgrieser/nvim-spider",
-    event = "VeryLazy",
-  },
-  {
-    "folke/tokyonight.nvim",
     event = "VeryLazy",
   },
   {
@@ -35,10 +25,6 @@ return {
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    event = "BufRead",
-  },
-  {
-    "sindrets/diffview.nvim",
     event = "BufRead",
   },
 }

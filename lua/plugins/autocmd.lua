@@ -1,5 +1,5 @@
 vim.api.nvim_create_autocmd("BufRead", {
-  pattern = { "*.tex", "*.txt" },
+  pattern = { "*.tex", "*.txt", "*.md", "*.norg" },
   command = "set wrap linebreak noautoindent",
 })
 
