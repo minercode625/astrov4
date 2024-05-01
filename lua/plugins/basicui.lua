@@ -4,11 +4,6 @@ return {
     event = "VeryLazy",
   },
   {
-    "lewis6991/spellsitter.nvim",
-    config = function() require("spellsitter").setup() end,
-    event = "User AstroFile",
-  },
-  {
     "chrisgrieser/nvim-spider",
     event = "VeryLazy",
   },
