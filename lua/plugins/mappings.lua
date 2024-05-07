@@ -9,7 +9,7 @@ return {
           -- second key is the lefthand side of the map
           -- mappings seen under group name "Buffer"
           [":"] = { "<cmd>FineCmdline<CR>" },
-          ["<leader>tc"] = { ":!code .<cr><cr>" },
+          ["<leader>tc"] = { ":!code .<cr><cr>", desc = "Open vscode" },
           ["/"] = { "<Plug>(easymotion-sn)" },
           ["n"] = { "<Plug>(easymotion-next)" },
           ["N"] = { "<Plug>(easymotion-prev)" },

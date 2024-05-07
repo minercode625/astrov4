@@ -7,5 +7,5 @@ return {
     "Everblush/nvim",
     name = "everblush",
     event = "VeryLazy",
-  }
+  },
 }
