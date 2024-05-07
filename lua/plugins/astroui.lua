@@ -41,6 +41,6 @@ return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
-    colorscheme = "everblush",
+    colorscheme = "cyberdream",
   },
 }
