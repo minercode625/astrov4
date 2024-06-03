@@ -1,6 +1,13 @@
 return {
   "linux-cultist/venv-selector.nvim",
-  dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
+  dependencies = {
+    "neovim/nvim-lspconfig",
+    "mfussenegger/nvim-dap",
+    "mfussenegger/nvim-dap-python", --optional
+    { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+  },
+  -- dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
+  branch = "regexp", -- This is the regexp branch, use this for the new version
   config = function()
     require("venv-selector").setup {
       -- search = false,
@@ -9,8 +16,16 @@ return {
       -- dap_enabled = false,
       -- notify_user_on_activate = true,
       -- pyenv_path = "/home/xxx/.pyenv/versions",
-      anaconda_base_path = "/opt/homebrew/Caskroom/miniforge/base",
-      anaconda_envs_path = "/opt/homebrew/Caskroom/miniforge/base/envs",
+      settings = {
+        search = {
+          anaconda_base = {
+            command = "fd /python$ /opt/homebrew/Caskroom/miniforge/base --full-path --color never -E /proc",
+            type = "anaconda",
+          },
+        },
+      },
+      -- anaconda_base_path = "/opt/homebrew/Caskroom/miniforge/base",
+      -- anaconda_envs_path = "/opt/homebrew/Caskroom/miniforge/base/envs",
     }
   end,
   opts = {

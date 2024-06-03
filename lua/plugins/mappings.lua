@@ -18,7 +18,6 @@ return {
           ["b"] = { "<cmd>lua require('spider').motion('b')<CR>" },
 
           ["<leader>vs"] = { "<cmd>VenvSelect<cr>", desc = "Select venv" },
-          ["<leader>vc"] = { "<cmd>VenvSelectCached<cr>", desc = "Select cached venv" },
 
           ["<leader>sa"] = { "<cmd>lua require('spectre').open()<CR>" },
           ["<leader>sw"] = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>" },
@@ -34,6 +33,20 @@ return {
             end,
             desc = "Pick to close",
           },
+
+          -- hover.lua
+          ["K"] = { "<cmd>lua require('hover').hover()<CR>", desc = "Hover symbol details" },
+          ["gK"] = { "<cmd>lua require('hover').hover_select()<CR>", desc = "Hover symbol details (select)" },
+          ["<C-p>"] = {
+            "<cmd>lua require('hover').hover_switch('previous')<CR>",
+            desc = "Hover symbol details (previous source)",
+          },
+          ["<C-n>"] = {
+            "<cmd>lua require('hover').hover_switch('next')<CR>",
+            desc = "Hover symbol details (next source)",
+          },
+          ["<MouseMove>"] = { "<cmd>lua require('hover').hover_mouse()<CR>", desc = "Hover symbol details (mouse)" },
+
           -- tables with the `name` key will be registered with which-key if it's installed
           -- this is useful for naming menus
           ["<Leader>b"] = { name = "Buffers" },
