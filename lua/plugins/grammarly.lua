@@ -3,7 +3,7 @@ return {
   config = function()
     require("lspconfig").grammarly.setup {
       on_attach = function(client, bufnr)
-        if vim.bo[bufnr].filetype == "tex" then client.resolved_capabilities.document_formatting = true end
+        if vim.bo[bufnr].filetype == "tex" then client.server_capabilities.documentFormattingProvider = true end
       end,
       filetypes = { "markdown", "tex", "text" },
     }

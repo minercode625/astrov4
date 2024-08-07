@@ -24,7 +24,7 @@ return {
           ["<leader>s"] = { "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>" },
 
           ["<Leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
-          ["<leader>T"] = { "<cmd>TroubleToggle<cr>", desc = "Trouble Toggle" },
+          ["<leader>T"] = { "<cmd>Trouble diagnostics toggle<cr>", desc = "Trouble Toggle" },
           ["<Leader>bD"] = {
             function()
               require("astroui.status").heirline.buffer_picker(
