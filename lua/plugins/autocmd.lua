@@ -13,4 +13,9 @@ vim.api.nvim_create_autocmd("FileType", {
   command = "setlocal tabstop=4 shiftwidth=4 expandtab",
 })
 
+if vim.fn.has "mac" == 1 and vim.fn.filereadable "/usr/local/lib/libInputSourceSwitcher.dylib" == 1 then
+  vim.g.XkbSwitchEnabled = 1
+  vim.g.XkbSwitchLib = "/usr/local/lib/libInputSourceSwitcher.dylib"
+end
+
 return {}
