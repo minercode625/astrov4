@@ -19,9 +19,14 @@ return {
 
           ["<leader>vs"] = { "<cmd>VenvSelect<cr>", desc = "Select venv" },
 
-          ["<leader>sa"] = { "<cmd>lua require('spectre').open()<CR>" },
-          ["<leader>sw"] = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>" },
-          ["<leader>s"] = { "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>" },
+          -- ["<leader>sa"] = { "<cmd>lua require('spectre').open()<CR>" },
+          -- ["<leader>sw"] = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>" },
+          -- ["<leader>s"] = { "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>" },
+          ["<leader>s"] = { "<cmd>GrugFar<cr>", desc = "Search and Replace" },
+          ["<leader>sw"] = {
+            "<cmd>lua require('grug-far').open({ prefills = { search = vim.fn.expand('< cword >') } })<cr>",
+            desc = "Search Current Word",
+          },
 
           ["<Leader>bn"] = { "<cmd>tabnew<cr>", desc = "New tab" },
           ["<leader>T"] = { "<cmd>Trouble diagnostics toggle<cr>", desc = "Trouble Toggle" },
