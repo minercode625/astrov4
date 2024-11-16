@@ -13,9 +13,6 @@ return {
           ["/"] = { "<Plug>(easymotion-sn)" },
           ["n"] = { "<Plug>(easymotion-next)" },
           ["N"] = { "<Plug>(easymotion-prev)" },
-          ["w"] = { "<cmd>lua require('spider').motion('w')<CR>" },
-          ["e"] = { "<cmd>lua require('spider').motion('e')<CR>" },
-          ["b"] = { "<cmd>lua require('spider').motion('b')<CR>" },
 
           ["<leader>vs"] = { "<cmd>VenvSelect<cr>", desc = "Select venv" },
 

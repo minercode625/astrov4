@@ -4,8 +4,12 @@ return {
     event = "VeryLazy",
   },
   {
-    "chrisgrieser/nvim-spider",
-    event = "VeryLazy",
+    "vhyrro/luarocks.nvim",
+    opts = {
+      luarocks_build_args = {
+        "--with-lua-include=/usr/include",
+      },
+    },
   },
   {
     "HiPhish/rainbow-delimiters.nvim",
