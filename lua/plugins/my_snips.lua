@@ -10,10 +10,29 @@ ls.add_snippets("tex", {
     i(1, "slide_name"),
     t { "}" },
     t { "", "\t\\textbf{" },
+    i(2, "subtitle"), -- subtitle 입력 필드 추가
+    t { "} \\\\", "" },
+    t { "\t\\vspace{0.3cm}" },
+    t { "", "", "\\end{frame}" },
+  }),
+})
+ls.add_snippets("tex", {
+  s("lec2", {
+    t { "\\begin{frame}{" },
+    i(1, "slide_name"),
+    t { "}" },
+    t { "", "\t\\textbf{" },
     f(function(args) return args[1][1] end, { 1 }),
     t { "} \\\\", "" },
     t { "\t\\vspace{0.3cm}" },
     t { "", "", "\\end{frame}" },
+  }),
+})
+ls.add_snippets("tex", {
+  s("fig", {
+    t { "\\begin{figure}", "\t\\centering", "\t\\includegraphics[width=0.8\\textwidth]{./figs/" },
+    i(1, "file_name"), -- file_name 입력 필드
+    t { ".png}", "\\end{figure}" },
   }),
 })
 return {}

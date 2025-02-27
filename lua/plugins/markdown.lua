@@ -7,6 +7,7 @@ return {
     ft = { "markdown" },
     event = "BufRead",
   },
+
   -- {
   --   "MeanderingProgrammer/markdown.nvim",
   --   name = "render-markdown", -- Only needed if you have another plugin named markdown.nvim
