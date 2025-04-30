@@ -10,15 +10,11 @@ return {
           -- mappings seen under group name "Buffer"
           [":"] = { "<cmd>FineCmdline<CR>" },
           ["<leader>tc"] = { ":!code .<cr><cr>", desc = "Open vscode" },
-          ["/"] = { "<Plug>(easymotion-sn)" },
-          ["n"] = { "<Plug>(easymotion-next)" },
-          ["N"] = { "<Plug>(easymotion-prev)" },
 
           ["<leader>vs"] = { "<cmd>VenvSelect<cr>", desc = "Select venv" },
 
-          -- ["<leader>sa"] = { "<cmd>lua require('spectre').open()<CR>" },
-          -- ["<leader>sw"] = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>" },
-          -- ["<leader>s"] = { "<cmd>lua require('spectre').open_file_search({select_word=true})<CR>" },
+          ["<leader>op"] = { "<cmd>OpenPDF<cr>", desc = "Open PDF File for latex" },
+
           ["<leader>s"] = { "<cmd>GrugFar<cr>", desc = "Search and Replace" },
           ["<leader>sw"] = {
             "<cmd>lua require('grug-far').open({ prefills = { search = vim.fn.expand('< cword >') } })<cr>",

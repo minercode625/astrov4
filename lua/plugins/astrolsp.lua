@@ -40,9 +40,7 @@ return {
       -- end
     },
     -- enable servers that you already have installed without mason
-    servers = {
-      "grammarly-languageserver", -- grammarly 서버 추가
-    },
+    servers = {},
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
