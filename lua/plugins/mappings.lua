@@ -11,8 +11,6 @@ return {
           [":"] = { "<cmd>FineCmdline<CR>" },
           ["<leader>tc"] = { ":!code .<cr><cr>", desc = "Open vscode" },
 
-          ["<leader>vs"] = { "<cmd>VenvSelect<cr>", desc = "Select venv" },
-
           ["<leader>op"] = { "<cmd>OpenPDF<cr>", desc = "Open PDF File for latex" },
 
           ["<leader>s"] = { "<cmd>GrugFar<cr>", desc = "Search and Replace" },

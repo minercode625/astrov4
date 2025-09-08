@@ -2,6 +2,12 @@ return {
   {
     "folke/tokyonight.nvim",
     event = "VeryLazy",
+    config = function()
+      require("tokyonight").setup {
+        style = "moon",
+        light_style = "day",
+      }
+    end,
   },
   {
     "Everblush/nvim",
